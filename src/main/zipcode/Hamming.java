@@ -17,13 +17,15 @@ public class Hamming {
     }
 
     public int getHammingDistance() {
-        int count = 0;
-        for (int i=0; i < s1.length(); i++) {
-            if (s.charAt(i) != s1.charAt(i)){
-                count++;
+        String[] sSplit = s.split("");
+        String[] s1Split = s1.split("");
+
+        int hammingDistance = 0;
+        for (int i = 0; i < sSplit.length; i++) {
+            if (!sSplit[i].equalsIgnoreCase(s1Split[i])) {
+                hammingDistance++;
             }
         }
-
-        return count;
+        return hammingDistance;
     }
 }
